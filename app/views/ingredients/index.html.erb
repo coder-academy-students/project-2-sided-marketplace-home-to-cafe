@@ -14,7 +14,7 @@
   <tbody>
     <% @ingredients.each do |ingredient| %>
       <tr>
-        <td><%= ingredient.product.name %></td>
+        <td><%= ingredient.product.cake_type %></td>
         <td><%= ingredient.name %></td>
         <td><%= link_to 'Show', ingredient %></td>
         <td><%= link_to 'Edit', edit_ingredient_path(ingredient) %></td>
