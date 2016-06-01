@@ -1,0 +1,2 @@
+module CafeOwnerProfilesHelper
+end

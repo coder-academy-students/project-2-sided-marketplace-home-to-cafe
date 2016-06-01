@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Cafe Owner Profiles</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Logo url</th>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Phone number</th>
+      <th>Latitude</th>
+      <th>Longitude</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cafe_owner_profiles.each do |cafe_owner_profile| %>
+      <tr>
+        <td><%= cafe_owner_profile.user %></td>
+        <td><%= cafe_owner_profile.logo_url %></td>
+        <td><%= cafe_owner_profile.name %></td>
+        <td><%= cafe_owner_profile.address %></td>
+        <td><%= cafe_owner_profile.phone_number %></td>
+        <td><%= cafe_owner_profile.latitude %></td>
+        <td><%= cafe_owner_profile.longitude %></td>
+        <td><%= link_to 'Show', cafe_owner_profile %></td>
+        <td><%= link_to 'Edit', edit_cafe_owner_profile_path(cafe_owner_profile) %></td>
+        <td><%= link_to 'Destroy', cafe_owner_profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Cafe Owner Profile', new_cafe_owner_profile_path %>

@@ -1,0 +1,43 @@
+<%= simple_form_for(@product) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.association :user %>
+    <%= f.input :cake_type %>
+    <%= f.input :description %>
+    <%= f.input :time_to_bake %>
+  </div>
+
+  <div class="">
+    <h1>Ingredients</h1>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Product <%= @product.cake_type %></th>
+          <th>Name</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @product.ingredients.each do |ingredient| %>
+          <tr>
+            <td><%= ingredient.name %></td>
+            <td><%= link_to 'Show', ingredient %></td>
+            <td><%= link_to 'Edit', edit_ingredient_path(ingredient) %></td>
+            <td><%= link_to 'Destroy', ingredient, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <br>
+
+    <%= link_to 'New Ingredient', new_ingredient_path %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @home_baker_profile.user %>
+</p>
+
+<p>
+  <strong>Logo url:</strong>
+  <%= @home_baker_profile.logo_url %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @home_baker_profile.name %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @home_baker_profile.address %>
+</p>
+
+<p>
+  <strong>Phone number:</strong>
+  <%= @home_baker_profile.phone_number %>
+</p>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @home_baker_profile.latitude %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @home_baker_profile.longitude %>
+</p>
+
+<%= link_to 'Edit', edit_home_baker_profile_path(@home_baker_profile) %> |
+<%= link_to 'Back', home_baker_profiles_path %>

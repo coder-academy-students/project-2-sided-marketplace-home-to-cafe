@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @cafe_owner_profile.user %>
+</p>
+
+<p>
+  <strong>Logo url:</strong>
+  <%= @cafe_owner_profile.logo_url %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @cafe_owner_profile.name %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @cafe_owner_profile.address %>
+</p>
+
+<p>
+  <strong>Phone number:</strong>
+  <%= @cafe_owner_profile.phone_number %>
+</p>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @cafe_owner_profile.latitude %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @cafe_owner_profile.longitude %>
+</p>
+
+<%= link_to 'Edit', edit_cafe_owner_profile_path(@cafe_owner_profile) %> |
+<%= link_to 'Back', cafe_owner_profiles_path %>
