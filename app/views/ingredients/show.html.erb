@@ -2,7 +2,7 @@
 
 <p>
   <strong>Product:</strong>
-  <%= @ingredient.product_id.cake_type %>
+  <%= Product.find(@ingredient.product_id).cake_type %>
 </p>
 
 <p>
