@@ -16,13 +16,12 @@ class IngredientsController < ApplicationController
   # GET /ingredients/new
   def new
     @ingredient = Ingredient.new
-    @ingredient.product = ProductsController.get_current_product
-
+    @ingredient.product_id = params[:product_id]
   end
 
   # GET /ingredients/1/edit
   def edit
-    # redirect_to edit_product_path(@ingredient.product)
+    # redirect_to edit_product_path(@ingredient.product_id)
   end
 
   # POST /ingredients
@@ -32,7 +31,7 @@ class IngredientsController < ApplicationController
 
     respond_to do |format|
       if @ingredient.save
-        format.html { redirect_to edit_product_path(@ingredient.product) }
+        format.html { redirect_to edit_product_path(@ingredient.product_id) }
         format.json { render :show, status: :created, location: @ingredient }
       else
         format.html { render :new }
@@ -46,7 +45,7 @@ class IngredientsController < ApplicationController
   def update
     respond_to do |format|
       if @ingredient.update(ingredient_params)
-        format.html { redirect_to edit_product_path(@ingredient.product) }
+        format.html { redirect_to edit_product_path(@ingredient.product_id) }
         format.json { render :show, status: :ok, location: @ingredient }
       else
         format.html { render :edit }
@@ -60,7 +59,7 @@ class IngredientsController < ApplicationController
   def destroy
     @ingredient.destroy
     respond_to do |format|
-      format.html { redirect_to edit_product_path(@ingredient.product) }
+      format.html { redirect_to edit_product_path(@ingredient.product_id) }
       format.json { head :no_content }
     end
   end
@@ -69,7 +68,7 @@ class IngredientsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_ingredient
       @ingredient = Ingredient.find(params[:id])
-      @product = @ingredient.product
+      #@product = @ingredient.product_id
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

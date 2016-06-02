@@ -2,7 +2,7 @@
 
 <p>
   <strong>Product:</strong>
-  <%= @ingredient.product.cake_type %>
+  <%= @ingredient.product_id.cake_type %>
 </p>
 
 <p>
@@ -11,4 +11,4 @@
 </p>
 
 |
-<%= link_to 'Back', edit_product_path(@ingredient.product) %>
+<%= link_to 'Back', edit_product_path(@ingredient.product_id) %>
