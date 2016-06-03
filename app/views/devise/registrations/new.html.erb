@@ -4,7 +4,8 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.collection_radio_buttons :user_type, [['HomeBaker', 'Home Baker'] ,['CafeOwner', 'Cafe Owner']],:first, :last, checked: 'HomeBaker'  %>
+    <%= f.collection_radio_buttons :user_type, [['HomeBaker', 'Home Baker'] ,['CafeOwner', 'Cafe Owner']],:first, :last, checked: params[:user_type] %>
+
     <%= f.input :username, required: true, autofocus: true %>
     <%= f.input :email, required: true %>
     <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
