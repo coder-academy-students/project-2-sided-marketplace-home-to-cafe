@@ -5,7 +5,10 @@ Rails.application.routes.draw do
   resources :reviews
   resources :cafe_owner_profiles
   resources :home_baker_profiles
-  devise_for :users
+ 
+ #devise_for :users
+  devise_for :users, controllers: { registrations: 'users/registrations', sessions: 'users/sessions' }
+  
   get 'home/index'
   root 'home#index'
 
